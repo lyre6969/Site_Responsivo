@@ -55,6 +55,7 @@ header:hover::before {
     font-size: 36px;
     color: rgb(79, 143, 196);
     display: none;
+    cursor: pointer;
 }
 
 @media (max-width: 992px) {
@@ -111,3 +112,152 @@ header:hover::before {
     background: linear-gradient(#468fb1, #cccfee);
     
 }
+
+.aneis{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+    margin-top: 3px;
+   
+    
+}
+
+.aneis .anel {
+    position: absolute;
+    border: 2px solid #3a7af1;
+    border-radius: 50%;
+}
+
+.aneis .anel:nth-of-type(1){
+width: 100%;
+height: 100%;
+border: 3px solid #3a74f1;
+animation: anel-1 1.5s linear infinite;
+}
+
+.aneis .anel:nth-of-type(2){
+    width: calc(100% *.65);
+    height: calc(100% * .65);
+    border: 2px solid #62c0ec;
+    animation: anel-2 1.5s linear infinite;
+    
+    }
+
+.aneis .anel:nth-of-type(3){
+    width: calc(100% * .1);
+    height: calc(100% * .1);
+    border: 2px  solid #2ae6f3;
+    animation: anel-3 1.5s linear infinite;
+        
+    }
+
+    @keyframes anel-1 {
+        0%{
+            transform: rotateZ(20deg);
+        }
+        100%{
+            transform: rotateZ(100deg) rotateY(360deg);            
+        }
+    }
+
+    @keyframes anel-2 {
+        0%{
+            transform: rotateZ(100deg);
+        }
+        100%{
+            transform: rotateZ(0deg) rotateY(360deg);            
+        }
+    }
+
+    @keyframes anel-3 {
+        0%{
+            transform: rotateZ(100deg) rotateX(-360deg);
+        }
+        100%{
+            transform: rotateZ(-100deg) rotateX(360deg);            
+        }
+    }
+
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 1200px;
+        flex-wrap: wrap;
+        z-index: 1;
+
+    }
+
+    .container .card {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        box-shadow: 20px 20px 50px rgba(0, 0, 0, .5);
+        background: rgba(255, 255, 255 , .1);
+        border-top: 1px solid rgba(255, 255, 255 , .5);
+        border-left: 1px solid rgba(255, 255, 255 , .5);
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(15px);
+        margin: 30px;
+        margin-top: 60px;
+    }   
+
+
+    .container .card .content {
+        position: relative;
+        padding: 20px;
+        text-align: center;
+        transition: .5s;
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    .container .card:hover .content {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+
+
+
+.container .card .content span {
+    position: absolute;
+    top: -90px;
+    right: 30px;
+    font-size: 8rem;
+    color: rgba(98, 102, 101, 0.671);
+    pointer-events: none;
+}
+
+.container .card .content h3 {
+    font-size: 1.8rem;
+    color: #000000a4;
+    z-index: 1;
+}
+
+
+
+.container .card .content p {
+    font-size: 1rem;
+    font-weight: 300;
+    color: gray;
+    margin: 15px 0;
+}
+
+.container .card .content a {
+    padding: 8px 20px ;
+    background: #fff;
+    color: #000;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+}
+
